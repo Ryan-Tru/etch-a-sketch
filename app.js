@@ -3,9 +3,11 @@ const blackButton = document.querySelector('.black');
 const rainbowButton = document.querySelector('.rainbow');
 const amountButton = document.querySelector('.amount');
 const clearButton = document.querySelector('.clear');
+let gridAmount = 16;
 
+//prompts the user to enter amount of grids
 amountButton.addEventListener('click', function() {
-    let gridAmount = prompt("Please Enter A Number Between 0 - 100:");
+    gridAmount = prompt("Please Enter A Number Between 0 - 100:");
 
     if(gridAmount > 100 || isNaN(gridAmount) == true) {
         prompt("Please Enter A Valid Number (0-100)");
@@ -26,3 +28,9 @@ function createGrid(amount) {
         }
     }
 }
+
+blackButton.addEventListener('click', function() {
+    
+});
+
+createGrid(gridAmount);
