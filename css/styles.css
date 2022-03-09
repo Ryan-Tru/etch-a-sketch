@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 :root {
     --grid-rows: 16;
@@ -16,8 +17,13 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: rgb(206, 206, 206);
     font-family: 'Lato', sans-serif;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('/background.jpg');
+}
+
+.heading {
+    font-family: 'Indie Flower', cursive;
+    color: rgb(255, 255, 255);
 }
 
 .etch-container {
@@ -37,7 +43,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 2%;
-    margin: auto;
+    padding-right: 170px;
 }
 
 .button-list {
@@ -45,16 +51,17 @@ body {
 }
 
 .button {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Indie Flower', cursive;
     font-size: 18px;
     margin: 9px;
     width: 90px;
     padding: 0.5em;
-    transition: all 0.02s;
+    transition: all 0.5s ease;
     border: none;
+    border-radius: 10px;
 }
 
 .button:hover {
     transform: scale(1.1);
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(204, 204, 204);
 }

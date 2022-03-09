@@ -30,7 +30,12 @@ function createGrid(amount) {
 }
 
 blackButton.addEventListener('click', function() {
-    
+    colorBlack();
 });
+
+function colorBlack() {
+    let etchGrid = document.querySelectorAll('.etch-grid');
+    console.log(etchGrid);
+}
 
 createGrid(gridAmount);
