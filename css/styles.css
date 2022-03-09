@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 :root {
-    --grid-rows: 1;
-    --grid-column: 1; 
+    --grid-rows: 16;
+    --grid-column: 16; 
 }
 
 * {
@@ -21,7 +21,8 @@ body {
 }
 
 .etch-container {
-    border: 2px black solid;
+    background-color: white;
+    box-shadow: 1px 1px 3px 5px rgba(0, 0, 0, 0.2);
     width: 400px;
     height: 400px;
     display: grid;
