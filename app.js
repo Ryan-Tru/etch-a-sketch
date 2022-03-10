@@ -4,7 +4,6 @@ const rainbowButton = document.querySelector('.rainbow');
 const amountButton = document.querySelector('.amount');
 const clearButton = document.querySelector('.clear');
 let gridAmount = 16;
-let isDrawing = false;
 
 //prompts the user to enter amount of grids
 amountButton.addEventListener('click', function() {
@@ -17,7 +16,7 @@ amountButton.addEventListener('click', function() {
     }
 });
 
-//create grid based on user input
+//creates grid based on user input
 function createGrid(amount) {
     etchContainer.style.setProperty('--grid-column', amount);
     etchContainer.style.setProperty('--grid-rows', amount);
@@ -28,40 +27,66 @@ function createGrid(amount) {
             etchContainer.appendChild(etchGrid);
         }
     }
+    etchContainer.querySelectorAll('.etch-grid').forEach(function(e) {
+        e.style.backgroundColor = 'white';
+    });
+
+    rainbowButton.classList.remove('active-button');
+    rainbowButton.classList.remove('active');
+
+    blackButton.classList.remove('active-button');
+    blackButton.classList.remove('active');
 }
 
-blackButton.addEventListener("click", function() {
-    blackButton.style.backgroundColor = 'rgb(140, 140, 140)';
-    colorBlack();
-    console.log('2');
+rainbowButton.addEventListener('click', function() {
+    blackButton.classList.remove('active-button');
+    blackButton.classList.remove('active');
+
+    rainbowButton.classList.toggle('active-button');
+    rainbowButton.classList.toggle('active');
+
+    if(rainbowButton.classList.contains('active')) {
+        rainbowColor();
+    }
 });
 
-function mouseMove() {
-    const etchGrid = document.querySelector(".etch-container");
-    etchGrid.addEventListener('mousedown', function() {
-        isDrawing = true;
-        console.log('3');
+blackButton.addEventListener('click', function() {
+    rainbowButton.classList.remove('active-button');
+    rainbowButton.classList.remove('active');
+
+    blackButton.classList.toggle('active-button');
+    blackButton.classList.toggle('active');
+
+    if(blackButton.classList.contains('active')) {
+        blackColor();
+    } 
+});
+
+function blackColor() {
+    etchContainer.addEventListener("mouseover", function coloring(event) {
+        event.target.style.backgroundColor = 'black';
     });
 }
 
-function colorBlack() {
-    const etchGrid = document.querySelector(".etch-container");
-    console.log('1');
-    if(isDrawing == true) {
-        etchGrid.addEventListener("mouseout", function(event) {
-        event.target.classList.replace("etch-grid", "black-color");
-        });
-    }
+function rainbowColor() {
+    etchContainer.addEventListener("mouseover", function coloring(event) {
+        event.target.style.backgroundColor = `hsl(${Math.random() * 360}, ${Math.random() * 100}%, ${Math.random() * (100 - 10) + 10}%)`;
+    });
+    
 }
 
-window.addEventListener('mouseup', function() {
-    if(isDrawing === true) {
-        isDrawing = false;
-        console.log('4');
-    }
-  });
+clearButton.addEventListener('click', function() {
+    etchContainer.querySelectorAll('.etch-grid').forEach(function(e) {
+        e.style.backgroundColor = 'white';
+    });
+
+    rainbowButton.classList.remove('active-button');
+    rainbowButton.classList.remove('active');
+
+    blackButton.classList.remove('active-button');
+    blackButton.classList.remove('active');
+});
 
 
 
-mouseMove();
 createGrid(gridAmount);

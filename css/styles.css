@@ -3,6 +3,7 @@
 :root {
     --grid-rows: 16;
     --grid-column: 16; 
+    --color: ;
 }
 
 * {
@@ -64,7 +65,6 @@ body {
     background-color: rgb(204, 204, 204);
 }
 
-.black-color {
-    background-color: black;
+.active-button {
+    background-color: rgb(140, 140, 140);
 }
-
