@@ -23,13 +23,14 @@ body {
 
 .heading {
     color: rgb(255, 255, 255);
+    font-size: 2em;
 }
 
 .etch-container {
     background-color: white;
     box-shadow: 1px 1px 3px 5px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    height: 400px;
+    width: 550px;
+    height: 550px;
     display: grid;
     max-width: 100%;
     max-height: 100%;
@@ -42,7 +43,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 2%;
-    padding-right: 170px;
+    padding-right: 210px;
 }
 
 .button-list {
@@ -51,9 +52,9 @@ body {
 
 .button {
     font-family: 'Indie Flower', cursive;
-    font-size: 18px;
+    font-size: 25px;
     margin: 9px;
-    width: 90px;
+    width: 5em;
     padding: 0.5em;
     transition: all 0.7s ease;
     border: none;
